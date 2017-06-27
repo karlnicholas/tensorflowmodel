@@ -30,7 +30,7 @@ public class LoadTensorFlowModel
     private void run() throws IOException {
         try
         {
-            List<MnistNumber> testSet = MnistReader.readTestSet();
+            List<MnistNumber> testSet = MnistReader.readTestSet("/Users/karln/.spyder-py3/MNIST_data");
             System.out.println(TensorFlow.version());
             try (SavedModelBundle b = SavedModelBundle.load("/karl/model3", "serve")) {
                 Session s = b.session();

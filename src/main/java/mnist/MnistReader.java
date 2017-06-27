@@ -9,27 +9,25 @@ import java.util.List;
  */
 public class MnistReader
 {
-    private static final String DIR                  =
-        "C:/Users/karln/.spyder-py3/MNIST_data/";
-    private static final String TRAINING_IMAGES_FILE =
-        DIR + "train-images-idx3-ubyte";
-    private static final String TRAINING_LABELS_FILE =
-        DIR + "train-labels-idx1-ubyte";
-    private static final String TEST_IMAGES_FILE     =
-        DIR + "t10k-images-idx3-ubyte";
-    private static final String TEST_LABELS_FILE     =
-        DIR + "t10k-labels-idx1-ubyte";
+    private static final String TRAINING_IMAGES_FILE_NAME =
+        "/train-images-idx3-ubyte";
+    private static final String TRAINING_LABELS_FILE_NAME =
+        "/train-labels-idx1-ubyte";
+    private static final String TEST_IMAGES_FILE_NAME     =
+        "/t10k-images-idx3-ubyte";
+    private static final String TEST_LABELS_FILE_NAME     =
+        "/t10k-labels-idx1-ubyte";
 
 
-    public static List<MnistNumber> readTrainingSet() throws IOException
+    public static List<MnistNumber> readTrainingSet(String mnistDir) throws IOException
     {
-        return readSet(TRAINING_IMAGES_FILE, TRAINING_LABELS_FILE);
+        return readSet(mnistDir + TRAINING_IMAGES_FILE_NAME, mnistDir + TRAINING_LABELS_FILE_NAME);
     }
 
 
-    public static List<MnistNumber> readTestSet() throws IOException
+    public static List<MnistNumber> readTestSet(String mnistDir) throws IOException
     {
-        return readSet(TEST_IMAGES_FILE, TEST_LABELS_FILE);
+        return readSet(mnistDir + TEST_IMAGES_FILE_NAME, mnistDir + TEST_LABELS_FILE_NAME);
     }
 
 

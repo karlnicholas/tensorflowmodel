@@ -66,7 +66,7 @@ public class TensorFlowLambda
                 return prediction == mnistNumber.label; 
             };
 
-            Long r = MnistReader.readTestSet().parallelStream()
+            Long r = MnistReader.readTestSet("/Users/karln/.spyder-py3/MNIST_data").parallelStream()
                 .map(runPrediction)
                 .filter(Boolean::booleanValue)
                 .collect(Collectors.counting());

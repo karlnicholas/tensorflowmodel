@@ -32,7 +32,7 @@ public class ShowMnistImages extends JFrame
     public ShowMnistImages() {
         try
         {
-            testSet = MnistReader.readTestSet();
+            testSet = MnistReader.readTestSet("/Users/karln/.spyder-py3/MNIST_data");
         }
         catch (IOException e)
         {

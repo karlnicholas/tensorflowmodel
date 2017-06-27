@@ -12,10 +12,23 @@ import javax.swing.SwingUtilities;
 import mnist.MnistNumber;
 import mnist.MnistReader;
 
+// -------------------------------------------------------------------------
+/**
+ *  Write a one-sentence summary of your class here.
+ *  Follow it with additional details about its purpose, what abstraction
+ *  it represents, and how to use it.
+ * 
+ *  @author karln
+ *  @version Jun 27, 2017
+ */
 public class ShowMnistImages extends JFrame
 {
-    List<MnistNumber> testSet;
+    private List<MnistNumber> testSet;
 
+    // ----------------------------------------------------------
+    /**
+     * Create a new ShowMnistImages object.
+     */
     public ShowMnistImages() {
         try
         {
@@ -23,8 +36,7 @@ public class ShowMnistImages extends JFrame
         }
         catch (IOException e)
         {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         setSize(new Dimension(500, 500));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,6 +75,11 @@ public class ShowMnistImages extends JFrame
     }
 
 
+    // ----------------------------------------------------------
+    /**
+     * Place a description of your method here.
+     * @param arg
+     */
     public static void main(String arg[])
     {
         SwingUtilities.invokeLater( ShowMnistImages::new );

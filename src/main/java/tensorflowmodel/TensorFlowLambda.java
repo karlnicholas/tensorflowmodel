@@ -30,9 +30,8 @@ public class TensorFlowLambda
         new TensorFlowLambda().run();
     }
     private void run() throws IOException {
-        System.out.println(TensorFlow.version());
-        
-        List<MnistNumber> testSet = MnistReader.readTestSet();
+        System.out.println(TensorFlow.version());        
+
         try (SavedModelBundle b = SavedModelBundle.load("/karl/model3", "serve")) {
 
             Session sess = b.session();
@@ -68,7 +67,7 @@ public class TensorFlowLambda
                 return prediction == mnistNumber.label; 
             };
 
-            Long r = testSet.parallelStream()
+            Long r = MnistReader.readTestSet().parallelStream()
                 .map(runPrediction)
                 .filter(Boolean::booleanValue)
                 .collect(Collectors.counting());

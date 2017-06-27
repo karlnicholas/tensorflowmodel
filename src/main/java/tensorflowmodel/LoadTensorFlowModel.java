@@ -28,11 +28,9 @@ public class LoadTensorFlowModel
         new LoadTensorFlowModel().run();
     }
     private void run() throws IOException {
-        List<MnistNumber> testSet;
-
         try
         {
-            testSet = MnistReader.readTestSet();
+            List<MnistNumber> testSet = MnistReader.readTestSet();
             System.out.println(TensorFlow.version());
             try (SavedModelBundle b = SavedModelBundle.load("/karl/model3", "serve")) {
                 Session s = b.session();

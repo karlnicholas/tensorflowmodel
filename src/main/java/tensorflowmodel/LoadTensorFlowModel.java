@@ -1,7 +1,10 @@
 package tensorflowmodel;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.FloatBuffer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import mnist.MnistNumber;
@@ -49,27 +52,22 @@ public class LoadTensorFlowModel
                     Tensor x = Tensor.create(new long[] {784}, fb);
                     Tensor keep_prob = Tensor.create(new long[] {1, 1024}, FloatBuffer.wrap(keep_prob_array));
                     
-                    Tensor result = s.runner()
+                    float[][] matrix = s.runner()
                         .feed("x", x)
                         .feed("keep_prob", keep_prob)
                         .fetch("y_conv")
-                        .run().get(0);
+                        .run()
+                        .get(0)
+                        .copyTo(new float[1][10]);
                     
-                    float[][] m = new float[1][10];
-                    //m[0] = new float[10];
-                    //Arrays.fill(m[0], 0);
-                    
-                    float[][] matrix = result.copyTo(m);
-                    float maxVal = 0;
-                    
-                    int inc = 0;
-                    int predict = -1;
-                    for(float val : matrix[0] ) {
+                    float maxVal = matrix[0][0];
+                    int predict = 0;
+                    for(int p = 1; p < matrix[0].length; ++p ) {
+                        float val = matrix[0][p]; 
                         if(val > maxVal) {
-                            predict = inc;
+                            predict = p;
                             maxVal = val;
                         }
-                        inc++; 
                     }
                     
                     if ( predict == testSet.get(i).label ) {
@@ -80,7 +78,6 @@ public class LoadTensorFlowModel
                 System.out.println(cp);
                 System.out.println(((float)cp)/((float)testSet.size()));
               }
-
         }
         catch (IOException e)
         {

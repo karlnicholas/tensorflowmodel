@@ -1,10 +1,7 @@
 package tensorflowmodel;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.FloatBuffer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 import mnist.MnistNumber;

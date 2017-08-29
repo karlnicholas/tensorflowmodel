@@ -37,15 +37,17 @@ public class TensorFlowLambdaMin
             );
             
             // run the model and get the result, 4.0f.
-            float[] y = sess.runner()
+            float[] ys = sess.runner()
                 .feed("x", x)
                 .fetch("y")
                 .run()
                 .get(0)
                 .copyTo(new float[NUM_PREDICTIONS]);
 
-            // print out the result.
-            System.out.println(y[0]);
+            // print out the result(s).
+            for ( float y: ys ) {
+                System.out.println(y);
+            }
         }                
     }
 }

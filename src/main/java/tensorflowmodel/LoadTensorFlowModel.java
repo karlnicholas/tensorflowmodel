@@ -32,7 +32,7 @@ public class LoadTensorFlowModel
         {
             List<MnistNumber> testSet = MnistReader.readTestSet("/Users/karln/.spyder-py3/MNIST_data");
             System.out.println(TensorFlow.version());
-            try (SavedModelBundle b = SavedModelBundle.load("/karl/model3", "serve")) {
+            try (SavedModelBundle b = SavedModelBundle.load("/karl/model", "serve")) {
                 Session s = b.session();
                 
                 int cp= 0;

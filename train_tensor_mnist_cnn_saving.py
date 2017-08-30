@@ -84,8 +84,7 @@ with tf.Session() as sess:
       print('step %d, training accuracy %g' % (i, train_accuracy))
     train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
 #
-  saver.save(sess, '/karl/mnist/mnist', global_step=20000)
+  save_model(sess, x, y_)
   
-#  print('test accuracy %g' % accuracy.eval(feed_dict={
-#     x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
-
+  print('test accuracy %g' % accuracy.eval(feed_dict={
+    x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))

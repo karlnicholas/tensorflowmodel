@@ -6,7 +6,7 @@ Reads a tensorflow model written in Python and trained for the MNIST data and do
 
 There are a couple of Java apps.
 
-1: Package mnist - code for reading mnist data. Not mine, best I could find on github. Seems to work okay.
+1: Package mnist - code for reading MNIST data. Not mine, best I could find on github. Seems to work okay.
 
 2: ShowMnistImages.java - reads MNIST data files and displays a random selection of digits.
 

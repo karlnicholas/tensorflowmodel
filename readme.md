@@ -2,7 +2,7 @@
 
 Fixed version of Java MNIST Data Read Routines for playing with tensorflow tutorials. Displays the handwritten numbers properly. 
 
-Reads a tensorflow model written in Python and trained for the MNIST data and does an accuracy check against the MNIST training data. Uses the model from the tensorflow tutorial [Deep MNIST for Experts ](https://www.tensorflow.org/get_started/mnist/pros). The python code in the root is the result of that tutorial with the code for saving the resulting trained model. This Java code reads that model and submits the MNIST data to it for predictions. The accuracy of the predictions are displayed. This Java code is based on the tutorial (I think) for the same at [Using Tensorflow models with Java](https://www.youtube.com/watch?v=j3MZ0brQ0QE).
+Reads a tensorflow model written in Python and trained for the MNIST data and does an accuracy check against the MNIST training data. Uses the model from the tensorflow tutorial [Deep MNIST for Experts ](https://www.tensorflow.org/get_started/mnist/pros). The python code in the root is the result of that tutorial with the code for saving the resulting trained model. This Java code reads that model and submits the MNIST data to it for predictions. The accuracy of the predictions are displayed. This Java code is based on the tutorial (or an earlier version of the same) for the same at [Using Tensorflow models with Java](https://www.youtube.com/watch?v=j3MZ0brQ0QE).
 
 There are a couple of Java apps.
 

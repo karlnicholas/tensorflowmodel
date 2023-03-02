@@ -31,3 +31,4 @@ hs_error_pid*
 .needspull
 .project
 .repo
+.idea/

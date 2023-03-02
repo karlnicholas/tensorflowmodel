@@ -10,13 +10,13 @@ import java.util.List;
 public class MnistReader
 {
     private static final String TRAINING_IMAGES_FILE_NAME =
-        "/train-images-idx3-ubyte";
+        "/train-images.idx3-ubyte";
     private static final String TRAINING_LABELS_FILE_NAME =
-        "/train-labels-idx1-ubyte";
+        "/train-labels.idx1-ubyte";
     private static final String TEST_IMAGES_FILE_NAME     =
-        "/t10k-images-idx3-ubyte";
+        "/t10k-images.idx3-ubyte";
     private static final String TEST_LABELS_FILE_NAME     =
-        "/t10k-labels-idx1-ubyte";
+        "/t10k-labels.idx1-ubyte";
 
 
     public static List<MnistNumber> readTrainingSet(String mnistDir) throws IOException
